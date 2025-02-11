@@ -1,7 +1,7 @@
 import java.lang.String;
 import java.util.Scanner;
 
-public class main {
+public class teste {
     public static void main(String[] args) {
         String nome = "clara";
         String tipoConta = "Corrente";
