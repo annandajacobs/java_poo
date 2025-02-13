@@ -1,3 +1,4 @@
+import br.com.exemplo.proj.calculos.CalculadoraDeTempo;
 import br.com.exemplo.proj.modelos.Filme;
 import br.com.exemplo.proj.modelos.Serie;
 
@@ -7,6 +8,11 @@ public class Principal {
         meuFilme.setNome("O Poderoso Chefão");
         meuFilme.setAnoDeLancamento(1972);
         meuFilme.setDuracaoEmMinutos(180);
+
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Infiltrados");
+        outroFilme.setAnoDeLancamento(1994);
+        outroFilme.setDuracaoEmMinutos(100);
 
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
@@ -26,5 +32,11 @@ public class Principal {
         serie.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar a série: " + serie.getDuracaoEmMinutos());
 
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(outroFilme);
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(serie);
+        System.out.println(calculadora.getTempoTotal());
     }
 }
+   
