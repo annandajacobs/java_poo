@@ -1,6 +1,7 @@
 package br.com.exemplo.proj.principal;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import br.com.exemplo.proj.modelos.Filme;
 import br.com.exemplo.proj.modelos.Serie;
@@ -24,8 +25,13 @@ public class principalComListas {
 
         for (Titulo item: lista) {
             System.out.println(item.getNome());
-            Filme filme = (Filme) item;
-            System.out.println("Classificação: " + filme.getClassificacao());
+            if (item instanceof Filme filme && filme.getClassificacao() > 2) {
+                System.out.println("Classificação: " + filme.getClassificacao());
+            }
         }
+        
+        Collections.sort(lista);
+        System.out.println(lista);
+
     }
 }
